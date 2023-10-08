@@ -1,0 +1,11 @@
+<p>Nombre del empleado : {{nombre}}</p>
+<p>Apellido del empleado : {{apellido}}</p>
+<p>Edad del empleado : {{edadEmpleado.value}}</p>
+<p>Empresa del empleado : {{empresa.value}}</p>
+Introduce la empresa: <input type="text" #empresa (keyup)="llamaEmpresa(empresa.value)">
+<br/>
+<br/>
+Introduce aqui la edad del empleado : <input type="number" #edadEmpleado>
+<br/>
+<br/>
+<input type="button" value="Cambia Edad" (click)="comprobarEdad(edadEmpleado.value)"/>
