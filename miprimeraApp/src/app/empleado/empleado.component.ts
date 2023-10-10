@@ -19,11 +19,32 @@ export class EmpleadoComponent {
   }
   */
 
+  habilitacionCuadro = false;
+  usuarioRegistrado = false;
+  textoDeRegistro = "No hay nadie registrado";
+
+  getRegistroUsuario(){
+    this.usuarioRegistrado = false;
+  }
+
   llamaEmpresa (value:String){
     return value;
   }
 
   comprobarEdad(edad:String){
     return edad;
+  }
+
+  setUsuarioRegistrado(){
+    alert ("El usuario se acaba de registrar.");
+  }
+
+  cambiarTextoDeRegistro(event:Event){
+    //this.textoDeRegistro = "Ahora si que hay alquien registrado"
+    if ((<HTMLInputElement>event.target).value == "si"){
+      this.textoDeRegistro = "Ahora si que hay alguien registrado";
+    }else {
+      this.textoDeRegistro = "No hay nadie registrado";
+    }
   }
 }
