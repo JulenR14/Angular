@@ -1,0 +1,26 @@
+<h1 style="text-align: center;">{{titulo}}</h1>
+<form>
+  <input type="text" name="nombre" [(ngModel)]="nombre"><br/>
+  <input type="text" name="apellido" [(ngModel)]="apellido"><br/><br/>
+  <!--El evento click llama a un metodo del js que modifica la variable registrado y da valor a la variable mensaje-->
+  <input type="submit" value="Registrar" (click)="registrarUsuario()">
+</form>
+
+<br/>
+<!--Con *ngIf decimos que si registrado es true mostrara el mensaje que hay en el parrafo, si es false no-->
+<p *ngIf="registrado; else sinRegistrar">{{mensaje}}</p>
+
+<!--El ng-template solo saldara en la web si la condicion nanterior es false, ya que si es asi
+saltara al else, y el else llama a dicho templete-->
+<ng-template #sinRegistrar>
+  <p>Nadie registrado</p>
+</ng-template>
+
+<br/>
+<br/>
+<br/>
+
+<ul>
+  <li *ngFor="let entrada of entradas; let i = index"><span style="font-size: large; font-weight: bold">{{entrada.titulo}}</span>
+  . Entrada {{i}}</li>
+</ul>
