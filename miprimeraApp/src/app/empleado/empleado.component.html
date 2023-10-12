@@ -1,11 +1,14 @@
 <p>Nombre del empleado : {{nombre}}</p>
 <p>Apellido del empleado : {{apellido}}</p>
 <p>Edad del empleado : {{edadEmpleado.value}}</p>
-<p>Empresa del empleado : {{empresa.value}}</p>
-Introduce la empresa: <input type="text" #empresa (keyup)="0" [disabled]="habilitacionCuadro">
+<p>Empresa del empleado : {{empresa}}</p>
+<!--Introduce la empresa: <input type="text" #empresa (keyup)="0" [disabled]="habilitacionCuadro">-->
+
+Introduce la empresa: <input type="text" [(ngModel)] = "empresa">
+
 <br/>
 <br/>
-Introduce aqui la edad del empleado : <input type="number" #edadEmpleado>
+Introduce aqui la edad del empleado : <input type="number" #edadEmpleado >
 <br/>
 <br/>
 <input type="button" value="Cambia Edad" (click)="comprobarEdad(edadEmpleado.value)"/>
@@ -13,7 +16,7 @@ Introduce aqui la edad del empleado : <input type="number" #edadEmpleado>
 <br/>
 <p>{{textoDeRegistro}}</p>
 
-Registrado : <input type="radio" value="si" name="nRegistro" id="registro" [checked]="usuarioRegistrado" (click)="cambiarTextoDeRegistro($event)"/><br/>
+Registrado : <input type="radio" value="si" name="nRegistro" [checked]="usuarioRegistrado" (click)="cambiarTextoDeRegistro($event)"/><br/>
 No Registrado : <input type="radio" value="no" name="nRegistro" (click)="cambiarTextoDeRegistro($event)"/>
 
 {{getRegistroUsuario()}}

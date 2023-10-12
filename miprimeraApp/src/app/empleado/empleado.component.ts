@@ -12,7 +12,8 @@ export class EmpleadoComponent {
   nombre = "Juan";
   apellido = "Díaz";
   edad = 30;
-  //empresa = "Simetria";
+  empresa = "Simetria";
+
 
   /*getEdad(){
     return this.edad;
@@ -36,14 +37,14 @@ export class EmpleadoComponent {
   }
 
   setUsuarioRegistrado(){
-    alert ("El usuario se acaba de registrar.");
+    alert ("El usuario se acaba de registrar."); 
   }
 
   cambiarTextoDeRegistro(event:Event){
     //this.textoDeRegistro = "Ahora si que hay alquien registrado"
     if ((<HTMLInputElement>event.target).value == "si"){
       this.textoDeRegistro = "Ahora si que hay alguien registrado";
-    }else {
+    }else if ((<HTMLInputElement>event.target).value == "no"){
       this.textoDeRegistro = "No hay nadie registrado";
     }
   }
