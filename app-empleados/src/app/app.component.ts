@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Empleado} from './empleado.model';
+import { Empleado } from './empleado.model';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +15,14 @@ export class AppComponent {
     new Empleado("Charles", "Ruiz", "Desarrollador Senior", 3000),
     new Empleado("Marta", "Sebastia", "Criminologa", 5000),
   ];
+  
+  nombre: string = "Nombre";
+  apellido: string = "Apellido";
+  cargo: string = "Cargo";
+  salario: number = 0;
+
+  agregarEmpleado(){
+    this.empleados.push(new Empleado (this.nombre, this.apellido, this.cargo, this.salario));
+  }
+
 }
