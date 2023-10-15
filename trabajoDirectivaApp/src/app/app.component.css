@@ -1,0 +1,9 @@
+.paraDirectores{
+    color: red;
+    font-weight: bold;
+    text-decoration: line-through;
+}
+
+.parrafoNegativo{
+    background-color: aqua;
+}

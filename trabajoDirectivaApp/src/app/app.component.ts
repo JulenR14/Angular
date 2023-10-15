@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   nombre = "";
   apellido = "";
-
   titulo = 'Registro de Usuarios';
   mensaje = "";
   registrado = false;
+  cargo: string = "";
 
   entradas: any[];
 

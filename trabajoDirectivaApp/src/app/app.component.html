@@ -1,19 +1,21 @@
 <h1 style="text-align: center;">{{titulo}}</h1>
 <form>
   <input type="text" name="nombre" [(ngModel)]="nombre"><br/>
-  <input type="text" name="apellido" [(ngModel)]="apellido"><br/><br/>
+  <input type="text" name="apellido" [(ngModel)]="apellido"><br/>
+  <input type="text" name="cargo" [(ngModel)]="cargo"><br/><br/>
   <!--El evento click llama a un metodo del js que modifica la variable registrado y da valor a la variable mensaje-->
   <input type="submit" value="Registrar" (click)="registrarUsuario()">
 </form>
 
 <br/>
 <!--Con *ngIf decimos que si registrado es true mostrara el mensaje que hay en el parrafo, si es false no-->
-<p *ngIf="registrado; else sinRegistrar">{{mensaje}}</p>
 
+<!--<p *ngIf="registrado; else sinRegistrar">{{mensaje}} y tiene el cargo de <span [ngStyle]="{color: cargo=='director' ? 'red': 'black'}">{{cargo}}</span></p>-->
+<p *ngIf="registrado; else sinRegistrar">{{mensaje}} y tiene el cargo de <span [ngClass]="{paraDirectores:cargo == 'director'}">{{cargo}}</span></p>
 <!--El ng-template solo saldara en la web si la condicion nanterior es false, ya que si es asi
 saltara al else, y el else llama a dicho templete-->
 <ng-template #sinRegistrar>
-  <p>Nadie registrado</p>
+  <p [ngClass]="{parrafoNegativo: true}">Nadie registrado</p>
 </ng-template>
 
 <br/>
