@@ -9,7 +9,7 @@ export class CaracteristicasEmpleadoCComponent {
 
   @Output() caracteristicasEmpleado = new EventEmitter<String>(); 
 
-  agregaCaracteristicas(value: string){
+  agregaCaracteristica(value: string){
     this.caracteristicasEmpleado.emit(value);
   }
 
