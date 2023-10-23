@@ -18,4 +18,17 @@ export class EmpleadosService{
         this.servicioVentanaEmergente.muestraMensaje("El nombre es : " + empleado.nombre);
         this.empleados.push(empleado);
       }
+
+      modificarEmpleado(empleado: Empleado, indice: number){
+        this.empleados.splice(indice, 1);
+        this.empleados.splice(indice, 0, empleado);
+      }
+
+      eliminarEmpleado(indice: number){
+        this.empleados.splice(indice, 1);
+      }
+
+      encontrarEmpleado(indice: number){
+        return this.empleados[indice];
+      }
 }
