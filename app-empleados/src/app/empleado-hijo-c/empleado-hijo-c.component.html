@@ -4,9 +4,9 @@
         <div>
           <br>
           <br>
-          <a [routerLink]="['/actualiza', indice]">
-            {{indice+1}}{{empleadoDeLista.nombre}}, {{empleadoDeLista.apellido}}, {{empleadoDeLista.cargo}}, {{empleadoDeLista.salario}}
-          </a>
+          {{indice+1}}{{empleadoDeLista.nombre}}, {{empleadoDeLista.apellido}}, {{empleadoDeLista.cargo}}, {{empleadoDeLista.salario}}
+          <a [routerLink]="['/actualiza', indice]" [queryParams]="{accion:'1'}" style="margin-left: 15px;">Actualiza</a>
+          <a [routerLink]="['/actualiza', indice]" [queryParams]="{accion:'2'}" style="margin-left: 15px;" >Elimina</a>
         </div>
 
         <app-caracteristicas-empleado-c (caracteristicasEmpleado)="agregarCaracteristica($event)"></app-caracteristicas-empleado-c>
