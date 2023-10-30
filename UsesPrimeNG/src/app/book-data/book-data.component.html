@@ -1,0 +1,20 @@
+<p-table [value]="books" [tableStyle]="{'min-width': '50rem'}">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Price In Dollars</th>          
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-book>
+        <tr [ngClass]="{'row-accessories': book.author === 'Julen'}">
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>
+                <div [ngClass]="{'outofstock': book.price === 0, 'lowstock': (book.price > 0 && book.price < 10),'instock': book.price > 10}">
+                    {{book.price}}
+                </div>
+            </td>          
+        </tr>
+    </ng-template>
+  </p-table>
